@@ -1,0 +1,51 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: cc-switch-backend
+    ports:
+      - "3010:3010"
+    environment:
+      - NODE_ENV=production
+      - PORT=3010
+      - DATABASE_TYPE=sqlite
+      - DATABASE_URL=file:./data/cc-switch.db
+      - JWT_SECRET=${JWT_SECRET:-change-this-in-production}
+      - ENCRYPTION_KEY=${ENCRYPTION_KEY:-32-char-encryption-key-here}
+    volumes:
+      - backend-data:/app/data
+      - cc-switch-backups:/root/.cc-switch/backups
+    restart: unless-stopped
+    networks:
+      - cc-switch-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3010/api/status/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: cc-switch-frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+    networks:
+      - cc-switch-network
+    environment:
+      - VITE_API_URL=http://backend:3010/api
+
+volumes:
+  backend-data:
+  cc-switch-backups:
+
+networks:
+  cc-switch-network:
+    driver: bridge
