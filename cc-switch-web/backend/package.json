@@ -1,0 +1,18 @@
+{
+  "name": "cc-switch-web-backend",
+  "version": "1.0.0",
+  "description": "Lightweight Web UI backend for cc-switch-cli",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node src/index.js",
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "bcrypt": "^5.1.1",
+    "dotenv": "^16.3.1",
+    "yaml": "^2.3.4"
+  }
+}

@@ -473,6 +473,27 @@ src-tauri/src/
 ```
 
 
+## 🌐 Web UI
+
+A lightweight local web UI is now available for cc-switch! Check out [cc-switch-web](cc-switch-web/) for:
+
+- Visual dashboard with provider status
+- One-click provider switching for Claude/Codex/Gemini
+- Custom CLI tool registration and management
+- Support for JSON, YAML, and ENV config formats
+- Clean React + Tailwind interface
+
+**Quick Start**:
+```bash
+cd cc-switch-web
+./start.sh
+# Then follow the prompts
+```
+
+See [cc-switch-web/README.md](cc-switch-web/README.md) for full documentation.
+
+---
+
 ## 🤝 Contributing
 
 Contributions welcome! This fork focuses on CLI functionality.
