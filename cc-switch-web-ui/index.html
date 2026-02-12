@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CC-Switch Web UI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-exchange-alt"></i> CC-Switch</h1>
+            <p class="subtitle">Switch between coding AI providers easily</p>
+        </header>
+
+        <main>
+            <!-- Provider Selection -->
+            <section class="card">
+                <h2><i class="fas fa-robot"></i> Select Provider</h2>
+                <div class="provider-grid">
+                    <button class="provider-card active" data-provider="claude">
+                        <div class="provider-icon claude">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>Claude</h3>
+                        <p class="provider-desc">Anthropic's AI assistant</p>
+                    </button>
+                    <button class="provider-card" data-provider="gemini">
+                        <div class="provider-icon gemini">
+                            <i class="fas fa-gem"></i>
+                        </div>
+                        <h3>Gemini</h3>
+                        <p class="provider-desc">Google's AI model</p>
+                    </button>
+                    <button class="provider-card" data-provider="codex">
+                        <div class="provider-icon codex">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Codex</h3>
+                        <p class="provider-desc">OpenAI's coding assistant</p>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Current Status -->
+            <section class="card status-card">
+                <h2><i class="fas fa-info-circle"></i> Current Status</h2>
+                <div class="status-content">
+                    <div class="status-item">
+                        <span class="label">Active Provider:</span>
+                        <span class="value" id="active-provider">Claude</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="label">Status:</span>
+                        <span class="value status-active"><i class="fas fa-check-circle"></i> Ready</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="label">Config Location:</span>
+                        <span class="value code">~/.cc-switch/config.json</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Actions -->
+            <section class="card">
+                <h2><i class="fas fa-bolt"></i> Quick Actions</h2>
+                <div class="actions-grid">
+                    <button class="action-btn" id="btn-check-config">
+                        <i class="fas fa-cog"></i>
+                        Check Config
+                    </button>
+                    <button class="action-btn" id="btn-list-providers">
+                        <i class="fas fa-list"></i>
+                        List Providers
+                    </button>
+                    <button class="action-btn" id="btn-get-env">
+                        <i class="fas fa-terminal"></i>
+                        Get Env Vars
+                    </button>
+                    <button class="action-btn" id="btn-help">
+                        <i class="fas fa-question-circle"></i>
+                        Help
+                    </button>
+                </div>
+            </section>
+
+            <!-- Output Console -->
+            <section class="card console-card">
+                <h2><i class="fas fa-terminal"></i> Output</h2>
+                <div class="console" id="console">
+                    <div class="console-line">
+                        <span class="prompt">$</span>
+                        <span class="text">Welcome to CC-Switch Web UI</span>
+                    </div>
+                    <div class="console-line">
+                        <span class="prompt">$</span>
+                        <span class="text">Select a provider to switch</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>CC-Switch Web UI v1.0.0 | <a href="#" target="_blank">Documentation</a></p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

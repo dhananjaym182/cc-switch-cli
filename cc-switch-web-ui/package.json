@@ -1,0 +1,19 @@
+{
+  "name": "cc-switch-web-ui",
+  "version": "1.0.0",
+  "description": "Web UI for cc-switch - Coding AI provider switcher",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve . -p 8080",
+    "dev": "npx serve . -p 8080 -o"
+  },
+  "keywords": [
+    "cc-switch",
+    "web-ui",
+    "claude",
+    "gemini",
+    "codex"
+  ],
+  "author": "",
+  "license": "MIT"
+}
